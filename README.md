@@ -7,10 +7,12 @@
 
 ``` r
 library(seuratify)
-img <- readImg('~/Documents/Admin/__Photo/photo_in_lab_square-01.png') %>% 
+img_path <- randomImg('img_2.jpg')
+img <- readImg('img_1.jpg') %>% 
     binImg(bins = 1000) %>% 
-    jitterPoints(jitter = 0.0025) %>% 
-    jitterColors(jitter = 0.25)
-plotSeurat(img, size = 0.15) 
+    jitterPoints(jitter = 0.01) %>% 
+    jitterColors(jitter = 0.1)
+p <- plotSeurat(img, size = 0.2) 
+ggsave('seurat.png', width = 18, height = 10)
 ```
 

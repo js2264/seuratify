@@ -6,7 +6,7 @@ readImg <- function(img) {
     isLink <- strsplit(img, '/')[[1]][1] %in% c('https:', 'http:')
     ext <- tools::file_ext(img)
     if (isLink) {
-        msg_note(glue::glue("Fetching img from {img}"))
+        glue::glue("Fetching img from {img}")
         z <- glue::glue(tempfile(), '.{ext}')
         download.file(img, z)
         img <- z
@@ -18,7 +18,7 @@ readImg <- function(img) {
         img <- jpeg::readJPEG(img)
     } 
     else {
-        stop(msg_warning("Please provide a png or jpeg image"))
+        stop("Please provide a png or jpeg image")
     }
     img <- cbind(
         img[, , 1] %>% 
@@ -41,4 +41,18 @@ readImg <- function(img) {
     ) %>% as_tibble()
     attr(img, 'ratio') <- max(img$y)/max(img$x)
     return(img)
+}
+
+randomImg <- function(file = NULL) {
+    url <- httr::GET(
+        'https://pixabay.com/api/', 
+        query = list(
+            'key' = '24754657-1e4850ee5c92aa34ee81fd3dc', 
+            'per_page' = 200, 
+            'page' = 1
+        )
+    ) %>% httr::content() %>% '[['('hits') %>% '[['(sample(1:200, 1)) %>% '[['('largeImageURL')
+    if (is.null(file)) file <- tempfile()
+    download.file(url, file)
+    return(file)
 }
