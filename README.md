@@ -1,4 +1,3 @@
-
 # seuratify
 
 <!-- badges: start -->
@@ -6,22 +5,12 @@
 [![pkgdown](https://github.com/js2264/seuratify/workflows/pkgdown/badge.svg)](https://github.com/js2264/seuratify/actions)
 <!-- badges: end -->
 
-The goal of seuratify is to ...
-
-## Installation
-
-You can install the released version of seuratify from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("seuratify")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(seuratify)
-## basic example code
+img <- readImg('~/Documents/Admin/__Photo/photo_in_lab_square-01.png') %>% 
+    binImg(bins = 1000) %>% 
+    jitterPoints(jitter = 0.0025) %>% 
+    jitterColors(jitter = 0.25)
+plotSeurat(img, size = 0.15) 
 ```
 
