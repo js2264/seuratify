@@ -16,6 +16,21 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/binImg.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/jitterColors.html</loc>
+  </url>
+  <url>
+    <loc>/reference/jitterPoints.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plotSeurat.html</loc>
+  </url>
+  <url>
+    <loc>/reference/readImg.html</loc>
   </url>
 </urlset>
