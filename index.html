@@ -69,11 +69,13 @@
 
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/js2264/seuratify" class="external-link">seuratify</a></span><span class="op">)</span>
-<span class="va">img</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/readImg.html">readImg</a></span><span class="op">(</span><span class="st">'~/Documents/Admin/__Photo/photo_in_lab_square-01.png'</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+<span class="va">img_path</span> <span class="op">&lt;-</span> <span class="fu">randomImg</span><span class="op">(</span><span class="st">'img_2.jpg'</span><span class="op">)</span>
+<span class="va">img</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/readImg.html">readImg</a></span><span class="op">(</span><span class="st">'img_1.jpg'</span><span class="op">)</span> <span class="op">%&gt;%</span> 
     <span class="fu"><a href="reference/binImg.html">binImg</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-    <span class="fu"><a href="reference/jitterPoints.html">jitterPoints</a></span><span class="op">(</span>jitter <span class="op">=</span> <span class="fl">0.0025</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-    <span class="fu"><a href="reference/jitterColors.html">jitterColors</a></span><span class="op">(</span>jitter <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span>
-<span class="fu"><a href="reference/plotSeurat.html">plotSeurat</a></span><span class="op">(</span><span class="va">img</span>, size <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> </code></pre></div>
+    <span class="fu"><a href="reference/jitterPoints.html">jitterPoints</a></span><span class="op">(</span>jitter <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+    <span class="fu"><a href="reference/jitterColors.html">jitterColors</a></span><span class="op">(</span>jitter <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plotSeurat.html">plotSeurat</a></span><span class="op">(</span><span class="va">img</span>, size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> 
+<span class="fu">ggsave</span><span class="op">(</span><span class="st">'seurat.png'</span>, width <span class="op">=</span> <span class="fl">18</span>, height <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 
